@@ -1,0 +1,105 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#pageContainer {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#content {
+    height: 75%;
+    width: 25%;
+    background-color: aliceblue;
+    border-radius: 12px;
+}
+
+#header {
+    position: relative;
+}
+
+#header h2 {
+    font-size: 4rem;
+    font-family: 'Lato', sans-serif;
+    margin: 2rem 3.5rem;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.inputDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 2rem 3.5rem;
+}
+
+.inputDiv label {
+    font-size: 1.7rem;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 0.8rem;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.inputDiv input {
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+.inputDiv p {
+    font-size: 1.2rem;
+    font-family: 'Lato', sans-serif;
+    color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    text-align: center;
+    margin: 0rem;
+}
+
+.inputDiv input:focus {
+    box-shadow: 0 0 3px 1px aquamarine;
+}
+
+.inputDiv input.valid {
+    box-shadow: 0 0 3px 1px rgb(10, 201, 10);
+}
+
+.inputDiv input.invalid {
+    box-shadow: 0 0 3px 1px rgb(206, 18, 18);
+}
+
+#submitBtn {
+    border: none;
+    outline: none;
+    color: white;
+    background-color: rgb(48, 182, 48);
+    border-radius: 5px;
+    padding: 1.4rem;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+#submitBtn:hover {
+    background-color: rgb(90, 190, 90);
+    color: rgb(247, 244, 244);
+}
