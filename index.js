@@ -95,7 +95,7 @@ const formValidation = (() => {
 			_setIconAndInputValid(icon, passwordDiv);
 		} else {
 			errMesage.textContent =
-				'Your password needs to be between 8 and 30 characters long and contain one uppercase letter, one lower case letter, and a digit.';
+				'Your password needs to be between 8 and 30 characters long and contain one uppercase letter, one lowercase letter, and a digit.';
 			_setIconAndInputInvalid(icon, passwordDiv);
 		}
 	}
