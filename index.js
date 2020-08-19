@@ -119,6 +119,11 @@ const formValidation = (() => {
 			_setIconAndInputInvalid(icon, confirmPasswordDiv);
 		}
 	}
+	function _checkAllInputs() {
+		const form = document.querySelector('form');
+		const inputDivs = Array.from(form.querySelectorAll('.inputDiv'));
+		return inputDivs.every((input) => input.classList.contains('valid'));
+	}
 	function checkForm(e) {
 		e.preventDefault();
 		checkEmail();
@@ -126,6 +131,11 @@ const formValidation = (() => {
 		checkZipCode();
 		checkPassword();
 		checkConfirmedPassword();
+		if (_checkAllInputs()) {
+			alert('High five');
+		} else {
+			alert('Error: invalid entries');
+		}
 	}
 
 	email.addEventListener('change', checkEmail);
