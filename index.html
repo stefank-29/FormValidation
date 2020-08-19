@@ -1,68 +1,85 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
+	<head>
+		<meta charset="utf-8" />
 
-    <title>Form</title>
+		<title>Form</title>
 
-    <link rel="stylesheet" href="styles.css?v=1.0" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/png" href="favicon1.png" />
-    <link
-      rel="stylesheet"
-      href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
-    />
-  </head>
+		<link rel="stylesheet" href="styles.css?v=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="icon" type="image/png" href="favicon1.png" />
+		<link
+			rel="stylesheet"
+			href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
+		/>
+	</head>
 
-  <body>
-    <div id="pageContainer">
-      <div id="content">
-        <div id="header">
-          <h2>Sign Up</h2>
-        </div>
-        <form action="none">
-          <div class="inputDiv">
-            <label for="email">Email</label>
-            <input type="email" id="email" />
-          </div>
-          <div class="inputDiv">
-            <label for="country">Country</label>
-            <input type="text" id="country" required />
-          </div>
-          <div class="inputDiv">
-            <label for="zipCode">Zip code</label>
-            <input type="text" id="zipCode" />
-          </div>
-          <div class="inputDiv">
-            <label for="password">Password</label>
-            <input type="password" id="password" />
-          </div>
-          <div class="inputDiv">
-            <label for="confirmPassword">Confirm Password</label>
-            <input type="password" id="confirmPassword" />
-          </div>
-          <div class="inputDiv">
-            <input type="submit" id="submitBtn" />
-          </div>
-          <div class="inputDiv">
-            <p>
-              By clicking the Sign Up button, you agree to our<br />
-              Terms & Conditions, and Privacy Policy
-            </p>
-          </div>
-        </form>
-      </div>
-    </div>
+	<body>
+		<div id="pageContainer">
+			<div id="content">
+				<div id="header">
+					<h2>Sign Up</h2>
+				</div>
+				<form action="none">
+					<div class="inputDiv">
+						<label for="email">Email</label>
+						<input type="email" id="email" />
+						<span class="status"
+							><i class="far fa-check-circle"></i
+						></span>
+						<!-- <i class="far fa-times-circle"></i> -->
+					</div>
+					<div class="inputDiv">
+						<label for="country">Country</label>
+						<input type="text" id="country" />
+						<span class="status"
+							><i class="far fa-check-circle"></i
+						></span>
+					</div>
+					<div class="inputDiv">
+						<label for="zipCode">Zip code</label>
+						<input type="text" id="zipCode" maxlength="10" />
+						<span class="status"
+							><i class="far fa-check-circle"></i
+						></span>
+					</div>
+					<div class="inputDiv">
+						<label for="password">Password</label>
+						<input type="password" id="password" />
+						<span class="status"
+							><i class="far fa-check-circle"></i
+						></span>
+					</div>
+					<div class="inputDiv">
+						<label for="confirmPassword">Confirm Password</label>
+						<input type="password" id="confirmPassword" />
+						<span class="status"
+							><i class="far fa-check-circle"></i
+						></span>
+					</div>
+					<div class="inputDiv">
+						<input type="submit" id="submitBtn" />
+					</div>
+					<div class="inputDiv">
+						<p>
+							By clicking the Sign Up button, you agree to our<br />
+							<a href="#">Terms & Conditions</a>, and
+							<a href="#">Privacy Policy</a>
+						</p>
+					</div>
+				</form>
+			</div>
+		</div>
 
-    <script src="index.js"></script>
-  </body>
+		<script src="index.js"></script>
+	</body>
 </html>
