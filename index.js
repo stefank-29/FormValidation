@@ -33,16 +33,16 @@ const formValidation = (() => {
 		const errMesage = email.parentNode.querySelector('.error');
 		const emailDiv = email.parentNode;
 		const reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		//todo dodati if ako je prazan
+
 		if (email.value === '') {
-			errMesage.textContent = 'This field is required';
+			errMesage.textContent = 'This field is required.';
 			_setIconAndInputInvalid(icon, emailDiv);
 			return;
 		}
 		if (reg.test(String(email.value).toLowerCase())) {
 			_setIconAndInputValid(icon, emailDiv);
 		} else {
-			errMesage.textContent = 'Please enter a valid email address';
+			errMesage.textContent = 'Please enter a valid email address.';
 			_setIconAndInputInvalid(icon, emailDiv);
 		}
 	}
@@ -53,14 +53,14 @@ const formValidation = (() => {
 		const countryDiv = country.parentNode;
 		const reg = /^([A-Za-z]{2}[ éàëA-Za-z]*)$/;
 		if (country.value === '') {
-			errMesage.textContent = 'This field is required';
+			errMesage.textContent = 'This field is required.';
 			_setIconAndInputInvalid(icon, countryDiv);
 			return;
 		}
 		if (reg.test(String(country.value))) {
 			_setIconAndInputValid(icon, countryDiv);
 		} else {
-			errMesage.textContent = 'Please enter a valid country name';
+			errMesage.textContent = 'Please enter a valid country name.';
 			_setIconAndInputInvalid(icon, countryDiv);
 		}
 	}
@@ -70,14 +70,14 @@ const formValidation = (() => {
 		const zipDiv = zipCode.parentNode;
 		const reg = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
 		if (zipCode.value === '') {
-			errMesage.textContent = 'This field is required';
+			errMesage.textContent = 'This field is required.';
 			_setIconAndInputInvalid(icon, zipDiv);
 			return;
 		}
 		if (reg.test(String(zipCode.value))) {
 			_setIconAndInputValid(icon, zipDiv);
 		} else {
-			errMesage.textContent = 'Please enter a valid ZIP Code';
+			errMesage.textContent = 'Please enter a valid ZIP Code.';
 			_setIconAndInputInvalid(icon, zipDiv);
 		}
 	}
@@ -87,7 +87,7 @@ const formValidation = (() => {
 		const passwordDiv = password.parentNode;
 		const reg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 		if (password.value === '') {
-			errMesage.textContent = 'This field is required';
+			errMesage.textContent = 'This field is required.';
 			_setIconAndInputInvalid(icon, passwordDiv);
 			return;
 		}
@@ -95,7 +95,7 @@ const formValidation = (() => {
 			_setIconAndInputValid(icon, passwordDiv);
 		} else {
 			errMesage.textContent =
-				'Your password needs to be between 8 and 30 characters long and contain one uppercase letter, one lower case letter, and a digit';
+				'Your password needs to be between 8 and 30 characters long and contain one uppercase letter, one lower case letter, and a digit.';
 			_setIconAndInputInvalid(icon, passwordDiv);
 		}
 	}
@@ -105,22 +105,27 @@ const formValidation = (() => {
 		const confirmPasswordDiv = confirmPassword.parentNode;
 		const reg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
 		if (confirmPassword.value === '') {
-			errMesage.textContent = 'This field is required';
+			errMesage.textContent = 'This field is required.';
 			_setIconAndInputInvalid(icon, confirmPasswordDiv);
 			return;
 		}
-		//todo razdvojiti za nepavilno i nepoklapanje
 		if (
-			reg.test(String(confirmPassword.value)) &&
+			//reg.test(String(confirmPassword.value))
 			confirmPassword.value === password.value
 		) {
 			_setIconAndInputValid(icon, confirmPasswordDiv);
 		} else {
+			errMesage.textContent = 'Please make sure your passwords match.';
 			_setIconAndInputInvalid(icon, confirmPasswordDiv);
 		}
 	}
 	function checkForm(e) {
 		e.preventDefault();
+		checkEmail();
+		checkCountry();
+		checkZipCode();
+		checkPassword();
+		checkConfirmedPassword();
 	}
 
 	email.addEventListener('change', checkEmail);
