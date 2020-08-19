@@ -109,10 +109,7 @@ const formValidation = (() => {
 			_setIconAndInputInvalid(icon, confirmPasswordDiv);
 			return;
 		}
-		if (
-			//reg.test(String(confirmPassword.value))
-			confirmPassword.value === password.value
-		) {
+		if (confirmPassword.value === password.value) {
 			_setIconAndInputValid(icon, confirmPasswordDiv);
 		} else {
 			errMesage.textContent = 'Please make sure your passwords match.';
@@ -122,7 +119,9 @@ const formValidation = (() => {
 	function _checkAllInputs() {
 		const form = document.querySelector('form');
 		const inputDivs = Array.from(form.querySelectorAll('.inputDiv'));
-		return inputDivs.every((input) => input.classList.contains('valid'));
+		return inputDivs
+			.slice(0, 5)
+			.every((input) => input.classList.contains('valid'));
 	}
 	function checkForm(e) {
 		e.preventDefault();

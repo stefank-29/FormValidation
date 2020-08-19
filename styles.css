@@ -151,8 +151,6 @@ body {
 
 ::-webkit-scrollbar {
 	width: 7px;
-	padding-top: 1rem;
-	padding-bottom: 2rem;
 }
 
 ::-webkit-scrollbar-thumb {
