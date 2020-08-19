@@ -58,9 +58,9 @@ const formValidation = (() => {
 			return;
 		}
 		if (reg.test(String(country.value))) {
-			errMesage.textContent = 'Please enter a valid country name';
 			_setIconAndInputValid(icon, countryDiv);
 		} else {
+			errMesage.textContent = 'Please enter a valid country name';
 			_setIconAndInputInvalid(icon, countryDiv);
 		}
 	}
@@ -75,10 +75,9 @@ const formValidation = (() => {
 			return;
 		}
 		if (reg.test(String(zipCode.value))) {
-			errMesage.textContent = 'Please enter a valid zipCode';
-
 			_setIconAndInputValid(icon, zipDiv);
 		} else {
+			errMesage.textContent = 'Please enter a valid ZIP Code';
 			_setIconAndInputInvalid(icon, zipDiv);
 		}
 	}
@@ -86,7 +85,7 @@ const formValidation = (() => {
 		const icon = password.parentNode.querySelector('i');
 		const errMesage = password.parentNode.querySelector('.error');
 		const passwordDiv = password.parentNode;
-		const reg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+		const reg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 		if (password.value === '') {
 			errMesage.textContent = 'This field is required';
 			_setIconAndInputInvalid(icon, passwordDiv);
@@ -95,6 +94,8 @@ const formValidation = (() => {
 		if (reg.test(String(password.value))) {
 			_setIconAndInputValid(icon, passwordDiv);
 		} else {
+			errMesage.textContent =
+				'Your password needs to be between 8 and 30 characters long and contain one uppercase letter, one lower case letter, and a digit';
 			_setIconAndInputInvalid(icon, passwordDiv);
 		}
 	}
