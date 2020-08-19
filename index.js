@@ -124,6 +124,7 @@ const formValidation = (() => {
 			.every((input) => input.classList.contains('valid'));
 	}
 	function checkForm(e) {
+		const form = document.querySelector('form');
 		e.preventDefault();
 		checkEmail();
 		checkCountry();
@@ -131,9 +132,8 @@ const formValidation = (() => {
 		checkPassword();
 		checkConfirmedPassword();
 		if (_checkAllInputs()) {
-			alert('High five');
-		} else {
-			alert('Error: invalid entries');
+			//todo pokupiti podatke i sacuvati u bazi
+			//console.log('High five');
 		}
 	}
 
